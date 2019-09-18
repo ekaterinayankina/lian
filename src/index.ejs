@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<%
+const menuItems = [
+    {title: 'HairCare', link: '#'},
+    {title: 'Color', link: '#'},
+    {title: 'Styling', link: '#'},
+    {title: 'Texture', link: '#'},
+    {title: 'Get Inspired', link: '#'},
+    {title: 'Social', link: '#'},
+    {title: 'News', link: '#'},
+    {title: 'About', link: '#'},
+    {title: 'Professional', link: '#'}
+];
+const videos = [
+    {
+        title: 'STEP BY STEP',
+        link: ["z8M0Fa1JVco",
+            "Wi2KcdoCuo4",
+            "8H6dYUgQKB8",
+            "PZjGrmHdFME",
+            "_wLGr24VeoI",
+            "DG4FAU5qmMY"]
+    },
+    {
+        title: 'CRAFT EDUCATION',
+        link: ["RmNWNLXmswk",
+            "-tztXOz8Vc0",
+            "-tztXOz8Vc0",
+            "kUfIVtyydgQ"]
+    },
+
+    {
+        title: "INSPIRATION",
+        link: ["VmmwwzR536g",
+            "vz0k8O-Ef9Y",
+            "vz0k8O-Ef9Y",
+            "6oPBFnsqJW8"]
+    }
+];
+const links = [
+    {img: "img/ico_facebook.svg", link: '#'},
+    {img: "img/ico_twitter.svg", link: '#'},
+    {img: "img/ico_pinterest.svg", link: '#'},
+    {img: "img/ico_youtube.svg", link: '#'},
+    {img: "img/ico_instagram.svg", link: '#'}
+];
+
+const footerNavigation = [
+    {title: 'PRIVACY POLICY', link: '#'},
+    {title: 'TERMS OF USE', link: '#'},
+    {title: 'CONTACT US', link: '#'},
+    {title: 'NEWSLETTER', link: '#'},
+    {title: 'SITEMAP', link: '#'}
+]
+%>
+
+<body class="page">
+<div class="header">
+    <div class="title">
+        <!-- Кнопка меню для мобильных -->
+        <button data-collapse data-target="#navigation" class="title__toggle"></button>
+
+        <div class="title__logo logo">
+            <img src="img/logo.svg" alt="TamTaram logo" class="logo__img">
+        </div>
+
+    </div>
+    <div class="navigation-block">
+        <div class="nearest title__nearest">
+            <a href="/" class="nearest__link">
+                <span class=" nearest__text">NEAREST SALON </span>
+
+                    <img src="img/ico_dropdown.svg" alt="->" class=" nearest__dropdown">
+
+                <address class="nearest__text_bottom">Plush Salon 92101 </address>
+            </a>
+        </div>
+        <form class="title__search-form search-form" action="#" method="get">
+            <input class="search-form__input" type="text" placeholder="Введите запрос..">
+            <button class="search-form__button" type="submit">
+                <img src="img/ico_search.svg" alt="Поиск" class="search-form__img">
+            </button>
+        </form>
+
+
+        <nav class="menu navigation-block__menu">
+            <ul class="menu__list">
+                <% menuItems.forEach((item) => { %>
+                    <li class="menu__item">
+                        <a class="menu__link" href="<%= item.link %>"><%= item.title %></a>
+                    </li>
+                <% }) %>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="path page-content__path">
+    <a class="path__link" href="#">
+        <nobr class="path__path-text">HOME /</nobr>
+        <nobr class="path__path-text">VIDEOS</nobr>
+    </a>
+</div>
+<div class="page-content">
+    <div class="main-content page-content__main-content">
+        <div class="main-content__title">VIDEOS</div>
+        <div class="youtube main-content__youtube">
+            <a data-fancybox href='https://youtu.be/9U7FO-op1Bc' class="main-content__link">
+                <img src="https://img.youtube.com/vi/9U7FO-op1Bc/maxresdefault.jpg" alt="" class="main-content__img">
+            </a>
+        </div>
+        <div class="main-content__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellensque lobortis, nisl at ullamcorper
+            egestas, felisadi piscing dolor, a interdum lorem urna quis magna.
+        </div>
+        <div class="main-content__separator"></div>
+    </div>
+  <div class="other-content page-content__other-content">
+        <% videos.forEach((item) => { %>
+            <div class="other-content__videos videos">
+                <div class="videos__title"><%= item.title %></div>
+                <div class="videos__wrap slider">
+                    <% item.link.forEach( (video, i) => { %>
+                        <% if (i < 3) { %>
+                            <a data-fancybox href="https://youtu.be/<%= video %>" class="videos__link">
+                                <img src="https://img.youtube.com/vi/<%= video %>/mqdefault.jpg" alt=""
+                                     class="videos__img">
+                            </a>
+                        <% } else { %>
+                            <a data-fancybox href="https://youtu.be/<%= video %>"
+                               class="videos__link videos__mobile-invisble">
+                                <img src="https://img.youtube.com/vi/<%= video %>/mqdefault.jpg" alt=""
+                                     class="videos__img">
+                            </a>
+                        <% } %>
+                    <% }) %>
+                </div>
+                <button class="videos__more">LOAD MORE</button>
+            </div>
+        <% }) %>
+    </div>
+</div>
+<footer class="footer">
+    <div class="share footer__share">
+        <% links.forEach((item) => { %>
+            <a class="share__link" href="<%= item.link %>">
+                <img src="<%= item.img %>" alt="" class="share__img">
+            </a>
+        <% }) %>
+    </div>
+    <div class="footer__location">
+        LOCATION: UNITED STATES <br>
+        LANGUAGE: ENGLISH
+    </div>
+    <div class="navigation footer__navigation ">
+        <% footerNavigation.forEach((item) => { %>
+            <a class="navigation__link" href="<%= item.link %>"><%= item.title %></a>
+        <% }) %>
+    </div>
+
+</footer>
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
