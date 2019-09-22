@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+//  _____________________________________________
+//
+// Colors
+//  _____________________________________________
+$bg: white;
+$bg-light: #f0f0f2;
+$accent: black;
+$text-color: #777777;
+$link-hover-color: $accent;
+$link-color: $text-color;
+$link-decoration: underline;
+$breadcrumb-bg: none;
+//  _____________________________________________
+//
+// Fonts
+//  _____________________________________________
+$font-family-base: 'Roboto', sans-serif;
+$message__font-size: 1em;
+$pagination__font-size: 18px;
+//  _____________________________________________
+//
+// Page-Size
+//  _____________________________________________
+$layout-max-width: 1600px;
+$breakpoint-phone: 540px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+$breakpoint-desktop: $layout-max-width;
+
