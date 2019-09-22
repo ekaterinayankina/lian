@@ -4,12 +4,8 @@
 
 ## Build Setup
 
-``` bash
 # install dependencies
 npm install
-npm i style-resources-loader -D
-npm i -D sass-loader node-sass
-npm i breakpoint-sass
 
 # serve with hot reload at localhost:8080
 npm run dev
@@ -28,6 +24,9 @@ npm run e2e
 
 # run all tests
 npm test
-```
+
+## Запуск проекта
+npm install # установите зависимости
+npm start   # запустите сборку
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
